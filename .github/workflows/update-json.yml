@@ -8,10 +8,14 @@ on:
 jobs:
   update-json:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Явно указываем разрешение на запись
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}  # Явно указываем токен
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -27,14 +31,9 @@ jobs:
     - name: Commit and push changes
       run: |
         git config --local user.name "github-actions[bot]"
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        if [ -n "$(git status --porcelain)" ]; then
-          git add inside-russia.json
-          git commit -m "Update JSON file"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git push
-        else
-          echo "No changes to commit"
-        fi
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add inside-russia.json
+        git commit -m "Update JSON file" || echo "No changes to commit"
+        git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
