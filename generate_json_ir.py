@@ -10,7 +10,7 @@ OUTPUT_FILE = "inside-russia.json"
 TEMPLATE = {
     "version": 1,
     "rules": [        
-        {"domain_suffix": []},  # Список доменов будет добавлен сюда
+        {"domain_suffix": []}  # Список доменов будет добавлен сюда
     ]
 }
 
