@@ -3,7 +3,7 @@
   "rules": [
     {
       "domain_suffix": [
-	      "browserleaks.com",
+	"browserleaks.com",
         "dnsleaktest.com",
         "ucsf.edu",
         "libgen.li",
