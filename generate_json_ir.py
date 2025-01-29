@@ -31,7 +31,7 @@ def fetch_domains(url):
 
 def update_json_template(domains):
     # Обновляем шаблон только списком доменов
-    TEMPLATE["rules"][1]["domain_suffix"] = domains
+    TEMPLATE["rules"][0]["domain_suffix"] = domains
     return TEMPLATE
 
 def main():
