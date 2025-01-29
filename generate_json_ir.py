@@ -9,8 +9,7 @@ OUTPUT_FILE = "inside-russia.json"
 # Шаблон JSON-структуры
 TEMPLATE = {
     "version": 1,
-    "rules": [
-        {"ip_cidr": ["160.79.104.0/23"]},
+    "rules": [        
         {"domain_suffix": []},  # Список доменов будет добавлен сюда
     ]
 }
