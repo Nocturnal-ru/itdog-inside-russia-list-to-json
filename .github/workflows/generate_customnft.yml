@@ -1,4 +1,4 @@
-name: Update JSON and LST Files
+name: Update Generate summorised lst file
 
 on:
   schedule:
