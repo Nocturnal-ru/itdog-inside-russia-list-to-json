@@ -648,6 +648,7 @@ nftset=/svtv.org/4#inet#fw4#vpn_domains
 nftset=/swagger.io/4#inet#fw4#vpn_domains
 nftset=/swissinfo.ch/4#inet#fw4#vpn_domains
 nftset=/synoforum.com/4#inet#fw4#vpn_domains
+nftset=/t-ru.org/4#inet#fw4#vpn_domains
 nftset=/t.co/4#inet#fw4#vpn_domains
 nftset=/tableau.com/4#inet#fw4#vpn_domains
 nftset=/tayga.info/4#inet#fw4#vpn_domains
