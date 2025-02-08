@@ -12,3 +12,6 @@ https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/
 с моими личными добавлениями в формате nfset
 
 https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/main/custom-rules.lst
+
+только добавки
+https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/main/custom-rules.json
