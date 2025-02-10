@@ -1,3 +1,4 @@
+# Сборщик результирующего файла для getdomains в формате nft-lst
 import requests
 import json
 import sys
