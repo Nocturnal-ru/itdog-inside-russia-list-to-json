@@ -21,8 +21,12 @@ https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/
 
 
 Запуск 2 варианта:
+```
 sh <(wget -O - https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/master/owrt_tune.sh)
+```
 или
+```
 wget -O /tmp/owrt_tune.sh https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/master/owrt_tune.sh
 sh /tmp/owrt_tune.sh
 rm /tmp/owrt_tune.sh
+```
