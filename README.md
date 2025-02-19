@@ -1,5 +1,5 @@
 # itdog-inside-russia-list-to-json
-автоконвертор списков
+**автоконвертор списков**
 - inside Russia
 - subnets (Meta/Discord/Twitter)
 
@@ -16,7 +16,7 @@ https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/
 только добавки
 https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/main/custom-rules.json
 
-Скрипт настройки openwrt:
+**Скрипт настройки openwrt**:
 - отключение IPv6
 
 
