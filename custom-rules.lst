@@ -539,6 +539,7 @@ nftset=/proton.me/4#inet#fw4#vpn_domains
 nftset=/protonvpn.com/4#inet#fw4#vpn_domains
 nftset=/provereno.media/4#inet#fw4#vpn_domains
 nftset=/prowlarr.com/4#inet#fw4#vpn_domains
+nftset=/proxyium.com/4#inet#fw4#vpn_domains
 nftset=/pscp.tv/4#inet#fw4#vpn_domains
 nftset=/psiphon.ca/4#inet#fw4#vpn_domains
 nftset=/public.parsec.app/4#inet#fw4#vpn_domains
