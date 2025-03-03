@@ -30,7 +30,8 @@
 	"proxyium.com",
 	"notionusercontent.com",
 	"splunkcloud.com",
-	"amazonaws.com"
+	"amazonaws.com",
+	"sentry.io"
       ]
     }
   ]
