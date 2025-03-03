@@ -6,7 +6,8 @@ import sys
 URLS = [
     "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/Discord.lst",
     "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/Meta.lst",
-    "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/Twitter.lst"
+    "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/Twitter.lst",
+    "https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/main/custom-subnets.lst"
 ]
 OUTPUT_FILE = "subnets.json"
 
@@ -25,8 +26,14 @@ def fetch_ips(urls):
             print(f"Fetching IPs from {url}...")
             response = requests.get(url, timeout=10)
             response.raise_for_status()
-            ips = response.text.splitlines()
-            all_ips.extend([ip for ip in ips if ip.strip()])  # Фильтруем пустые строки
+            # Проверяем, JSON это или текст
+            if url.endswith('.json'):
+                data = response.json()
+                # Предполагаем, что в JSON есть поле "rules" с "ip_cidr"
+                ips = data["rules"][0]["ip_cidr"]
+            else:
+                ips = response.text.splitlines()
+            all_ips.extend([ip.strip() for ip in ips if ip.strip()])  # Фильтруем пустые строки
         
         if not all_ips:
             raise ValueError("All fetched IP lists are empty.")
@@ -36,6 +43,9 @@ def fetch_ips(urls):
         sys.exit(1)
     except ValueError as e:
         print(f"Error: {e}")
+        sys.exit(1)
+    except KeyError as e:
+        print(f"Error in JSON structure: missing key {e}")
         sys.exit(1)
 
 def update_json_template(ips):
