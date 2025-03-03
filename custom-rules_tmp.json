@@ -1,3 +1,8 @@
 domain:whatismyipaddress.com,
 domain:msfree.su,
 domain:gvt1.com
+#gemini
+	"gemini.google.com",	      
+	"geller-pa.googleapis.com",
+	"generativelanguage.googleapis.com",
+	"proactivebackend-pa.googleapis.com"
