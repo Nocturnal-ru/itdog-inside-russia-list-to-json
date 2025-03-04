@@ -29,8 +29,8 @@
 	"rargb.to",
 	"proxyium.com",
 	"notionusercontent.com",
-	"splunkcloud.com",
-	"amazonaws.com",
+	"http-inputs-notion.splunkcloud.com",
+	"notion-emojis.s3-us-west-2.amazonaws.com",
 	"sentry.io"
       ]
     }
