@@ -1,3 +1,4 @@
+# генерируем subnets.json/Noc из Discord.lst/itdog + Meta.lst/itdog + Twitter.lst/itdog + custom-subnets.lst/Noc
 import requests
 import json
 import sys
