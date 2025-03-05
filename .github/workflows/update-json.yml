@@ -1,4 +1,4 @@
-name: Update JSON Files
+name: Generate subnets.json/Noc+inside-russia.json/Noc
 
 on:
   schedule:
