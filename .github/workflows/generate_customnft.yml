@@ -1,4 +1,4 @@
-name: Generate summorised lst file for getdomains
+name: Generate custom-rules.lst for getdomains
 
 on:
   schedule:
