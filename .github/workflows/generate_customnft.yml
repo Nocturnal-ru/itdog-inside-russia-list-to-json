@@ -1,4 +1,4 @@
-name: Update Generate summorised lst file
+name: Generate summorised lst file for getdomains
 
 on:
   schedule:
