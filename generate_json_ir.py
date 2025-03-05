@@ -1,3 +1,4 @@
+# генерируем inside-russia.json/Noc из inside-raw.lst/itdog
 import requests
 import json
 import sys
