@@ -1,3 +1,4 @@
+# собираем inside-russia.json/Noc+custom-rules.json минус exclude.json
 import requests
 import json
 import sys
