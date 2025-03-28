@@ -1,5 +1,4 @@
-name: Generate subnets.json/Noc+inside-russia.json/Noc
-
+name: Generate subnets.json/.lst/Noc+inside-russia.json/Noc
 on:
   schedule:
     - cron: "0 0 * * *" # Запуск каждый день в полночь
@@ -35,8 +34,8 @@ jobs:
       run: |
         git config --local user.name "github-actions[bot]"
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add inside-russia.json subnets.json
-        git commit -m "Update JSON files" || echo "No changes to commit"
+        git add inside-russia.json subnets.json subnets.lst
+        git commit -m "Update JSON and LST files" || echo "No changes to commit"
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
