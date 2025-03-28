@@ -1,4 +1,4 @@
-# генерируем subnets.json/Noc из Discord.lst/itdog + Meta.lst/itdog + Twitter.lst/itdog + custom-subnets.lst/Noc
+# генерируем subnets.json/subnets.lst/Noc из Discord.lst/itdog + Meta.lst/itdog + Twitter.lst/itdog + custom-subnets.lst/Noc
 import requests
 import json
 import sys
@@ -10,7 +10,8 @@ URLS = [
     "https://raw.githubusercontent.com/itdoginfo/allow-domains/main/Subnets/IPv4/Twitter.lst",
     "https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/main/custom-subnets.lst"
 ]
-OUTPUT_FILE = "subnets.json"
+OUTPUT_FILE_JSON = "subnets.json"
+OUTPUT_FILE_LST = "subnets.lst"
 
 # Шаблон JSON-структуры
 TEMPLATE = {
@@ -54,6 +55,16 @@ def update_json_template(ips):
     TEMPLATE["rules"][0]["ip_cidr"] = ips
     return TEMPLATE
 
+def save_lst_file(ips, output_file):
+    try:
+        with open(output_file, "w") as f:
+            for ip in ips:
+                f.write(f"{ip}\n")
+        print(f"LST file generated successfully: {output_file}")
+    except IOError as e:
+        print(f"Error saving LST file: {e}")
+        sys.exit(1)
+
 def main():
     try:
         print("Fetching IP lists...")
@@ -63,10 +74,13 @@ def main():
         print("Updating JSON template...")
         updated_json = update_json_template(ips)
 
-        with open(OUTPUT_FILE, "w") as f:
+        with open(OUTPUT_FILE_JSON, "w") as f:
             json.dump(updated_json, f, indent=4)
+        print(f"JSON file generated successfully: {OUTPUT_FILE_JSON}")
 
-        print(f"JSON file generated successfully: {OUTPUT_FILE}")
+        print("Generating LST file...")
+        save_lst_file(ips, OUTPUT_FILE_LST)
+
     except Exception as e:
         print(f"Unexpected error: {e}")
         sys.exit(1)
