@@ -1,5 +1,4 @@
 name: Generate custom-rules.lst/getdomains custom-rules_raw.lst/podkop
-
 on:
   schedule:
     - cron: "10 0 * * *"  # Запуск в 00:10 каждый день
@@ -32,8 +31,8 @@ jobs:
       run: |
         git config --local user.name "github-actions[bot]"
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add custom-rules.lst
-        git commit -m "Update LST file" || echo "No changes to commit"
+        git add custom-rules.lst custom-rules_raw.lst
+        git commit -m "Update LST files" || echo "No changes to commit"
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
