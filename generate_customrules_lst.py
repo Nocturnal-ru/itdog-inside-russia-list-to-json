@@ -1,4 +1,4 @@
-# собираем inside-russia.json/Noc+custom-rules.json минус exclude.json
+# собираем inside-russia.json/Noc+custom-rules.json минус exclude.json в формате nftset (custom-rules.lst) и простой список (custom-rules_raw.lst)
 import requests
 import json
 import sys
@@ -8,6 +8,7 @@ INSIDE_RUSSIA_URL = "https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside
 CUSTOM_RULES_URL = "https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/main/custom-rules.json"
 EXCLUDE_RULES_URL = "https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/main/exclude.json"
 OUTPUT_FILE = "custom-rules.lst"
+RAW_OUTPUT_FILE = "custom-rules_raw.lst"
 
 # Константы для формата вывода
 NFT_PREFIX = "nftset=/"
@@ -63,6 +64,17 @@ def save_lst_file(domains, output_file):
         print(f"Error saving LST file: {e}")
         sys.exit(1)
 
+def save_raw_lst_file(domains, output_file):
+    try:
+        with open(output_file, 'w') as f:
+            for domain in domains:
+                # Записываем каждый домен в простой список
+                f.write(f"{domain}\n")
+        print(f"Raw LST file generated successfully: {output_file}")
+    except IOError as e:
+        print(f"Error saving raw LST file: {e}")
+        sys.exit(1)
+
 def main():
     try:
         print("Fetching inside-russia.json...")
@@ -80,6 +92,9 @@ def main():
         
         print("Generating LST file...")
         save_lst_file(merged_domains, OUTPUT_FILE)
+        
+        print("Generating raw LST file...")
+        save_raw_lst_file(merged_domains, RAW_OUTPUT_FILE)
         
     except Exception as e:
         print(f"Unexpected error: {e}")
