@@ -1,4 +1,4 @@
-name: Generate custom-rules.lst for getdomains
+name: Generate custom-rules.lst/getdomains custom-rules_raw.lst/podkop
 
 on:
   schedule:
