@@ -271,6 +271,7 @@ nftset=/gdb.rferl.org/4#inet#fw4#vpn_domains
 nftset=/geforcenow.com/4#inet#fw4#vpn_domains
 nftset=/gelbooru.com/4#inet#fw4#vpn_domains
 nftset=/gemini.google.com/4#inet#fw4#vpn_domains
+nftset=/generativelanguage.googleapis.com/4#inet#fw4#vpn_domains
 nftset=/geolocation.onetrust.com/4#inet#fw4#vpn_domains
 nftset=/germania.one/4#inet#fw4#vpn_domains
 nftset=/getoutline.com/4#inet#fw4#vpn_domains
