@@ -7,3 +7,5 @@ generativelanguage.googleapis.com
 proactivebackend-pa.googleapis.com
 #notion обращается к этому cidr за геолокацией
 208.103.161.0/24
+gemini possible 
+generativelanguage.googleapis.com
