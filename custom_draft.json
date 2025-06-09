@@ -7,7 +7,11 @@ generativelanguage.googleapis.com
 proactivebackend-pa.googleapis.com
 #notion обращается к этому cidr за геолокацией
 208.103.161.0/24
-gemini possible 
+#скрины с 4pda не грузятся
+4pda.ws
+#новый домен с аватарками каналов YT
+yt3.googleusercontent.com
+#gemini possible 
 generativelanguage.googleapis.com
 
 
