@@ -5,18 +5,21 @@ gemini.google.com
 geller-pa.googleapis.com
 generativelanguage.googleapis.com
 proactivebackend-pa.googleapis.com
-#notion обращается к этому cidr за геолокацией
+#notion обращается к этому cidr за геолокацией, мое наблюдение
 208.103.161.0/24
 #скрины с 4pda не грузятся
 4pda.ws
+#ebi ac uk
+emblstatic.net
+embl-communications.github.io
+ebi.ac.uk
+
 #новый домен с аватарками каналов YT
 yt3.googleusercontent.com
 #gemini possible 
 generativelanguage.googleapis.com
 
-
 #Google DeepMind
-
 deepmind.com
 deepmind.google
 Google Generative Language API
