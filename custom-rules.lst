@@ -163,6 +163,7 @@ nftset=/daemon-tools.cc/4#inet#fw4#vpn_domains
 nftset=/danbooru.donmai.us/4#inet#fw4#vpn_domains
 nftset=/data-cdn.mbamupdates.com/4#inet#fw4#vpn_domains
 nftset=/decrypt.day/4#inet#fw4#vpn_domains
+nftset=/deepl.com/4#inet#fw4#vpn_domains
 nftset=/deepstatemap.live/4#inet#fw4#vpn_domains
 nftset=/delfi.lt/4#inet#fw4#vpn_domains
 nftset=/delfi.lv/4#inet#fw4#vpn_domains
