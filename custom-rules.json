@@ -2,17 +2,16 @@
   "version": 1,
   "rules": [
     {
-      "domain_suffix": [
+    "domain_suffix": [
 	"browserleaks.com",
-        "dnsleaktest.com",
-        "ucsf.edu",
-        "libgen.li",
-	"www.ebi.ac.uk",
-        "ebi.ac.uk",
+	"dnsleaktest.com",
+    "ucsf.edu",
+    "libgen.li",
+	"ebi.ac.uk",
 	"embl-communications.github.io",
 	"emblstatic.net",
 	"phylotree.hyphy.org",
-        "iedb.org",
+    "iedb.org",
 	"tria.ge",
 	"habrastorage.org",
 	"nperf.net",
@@ -47,7 +46,8 @@
 	"videos.openai.com",
 	"gvt1.com",
 	"mimuw.edu.pl",
-	"lantern.io"
+	"lantern.io",
+	"veriff.me"
       ]
     }
   ]
