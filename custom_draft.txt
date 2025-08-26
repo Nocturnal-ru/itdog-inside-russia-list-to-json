@@ -22,8 +22,8 @@ generativelanguage.googleapis.com
 #Google DeepMind
 deepmind.com
 deepmind.google
-Google Generative Language API
 
+Google Generative Language API
 geller-pa.googleapis.com
 generativelanguage.googleapis.com
 proactivebackend-pa.googleapis.com
