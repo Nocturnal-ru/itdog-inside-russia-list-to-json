@@ -59,7 +59,13 @@
         "thermofisher.com",
         "korg.com",
         "stripecdn.com",
-        "stripe.com"
+        "stripe.com",
+        "cdn.embedly.com",
+        "scira.ai",
+        "dodopayments.com",
+        "download.copr.fedorainfracloud.org",
+        "mirrors.fedoraproject.org",
+        "codecs.fedoraproject.org"        
       ]
     }
   ]
