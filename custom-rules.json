@@ -65,7 +65,9 @@
         "dodopayments.com",
         "download.copr.fedorainfracloud.org",
         "mirrors.fedoraproject.org",
-        "codecs.fedoraproject.org"        
+        "codecs.fedoraproject.org",
+        "s10251.pcdn.co",
+        "lifearchitect.ai"
       ]
     }
   ]
