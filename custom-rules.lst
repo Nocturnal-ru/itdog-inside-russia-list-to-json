@@ -105,6 +105,7 @@ nftset=/bing.com/4#inet#fw4#vpn_domains
 nftset=/bio-world.com/4#inet#fw4#vpn_domains
 nftset=/bitdefender.com/4#inet#fw4#vpn_domains
 nftset=/bitnami.com/4#inet#fw4#vpn_domains
+nftset=/black-book.wiki/4#inet#fw4#vpn_domains
 nftset=/blackseanews.net/4#inet#fw4#vpn_domains
 nftset=/blinkshot.io/4#inet#fw4#vpn_domains
 nftset=/bluehost.com/4#inet#fw4#vpn_domains
