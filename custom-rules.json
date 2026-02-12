@@ -72,7 +72,8 @@
         "oup.com",
         "static.primary.prod.gcms.the-infra.com",
         "oup.silverchair-cdn.com",
-        "cdn.jsdelivr.net"
+        "cdn.jsdelivr.net",
+        "service.seamlessaccess.org"
       ]
     }
   ]
