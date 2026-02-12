@@ -71,7 +71,8 @@
         "black-book.wiki",
         "oup.com",
         "static.primary.prod.gcms.the-infra.com",
-        "oup.silverchair-cdn.com"
+        "oup.silverchair-cdn.com",
+        "cdn.jsdelivr.net"
       ]
     }
   ]
