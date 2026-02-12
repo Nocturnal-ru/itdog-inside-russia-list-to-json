@@ -13,6 +13,13 @@ proactivebackend-pa.googleapis.com
 emblstatic.net
 embl-communications.github.io
 ebi.ac.uk
+#elsevier
+"elsevier.com",
+"elsevier.com.cdn.cloudflare.net",
+#Oxford Academic
+oup.com
+static.primary.prod.gcms.the-infra.com
+oup.silverchair-cdn.com
 
 #новый домен с аватарками каналов YT
 yt3.googleusercontent.com
