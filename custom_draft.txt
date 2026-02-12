@@ -21,6 +21,7 @@ oup.com
 static.primary.prod.gcms.the-infra.com
 oup.silverchair-cdn.com
 cdn.jsdelivr.net
+service.seamlessaccess.org
 
 #новый домен с аватарками каналов YT
 yt3.googleusercontent.com
