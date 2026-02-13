@@ -17,7 +17,7 @@ ebi.ac.uk
 "elsevier.com",
 "elsevier.com.cdn.cloudflare.net",
 #Oxford Academic
-oup.com
+academic.oup.com
 static.primary.prod.gcms.the-infra.com
 oup.silverchair-cdn.com
 cdn.jsdelivr.net
