@@ -1,10 +1,8 @@
 # notion обращается к этому cidr за геолокацией, мое наблюдение
 208.103.161.0/24
-
 # google domen отвечает за многое
 gvt1.com
-
-#gemini
+# gemini
 gemini.google.com	      
 geller-pa.googleapis.com
 generativelanguage.googleapis.com
@@ -16,9 +14,9 @@ emblstatic.net
 embl-communications.github.io
 ebi.ac.uk
 #elsevier
-"elsevier.com",
-"elsevier.com.cdn.cloudflare.net",
-#Oxford Academic
+elsevier.com
+elsevier.com.cdn.cloudflare.net
+# Oxford Academic
 academic.oup.com
 static.primary.prod.gcms.the-infra.com
 oup.silverchair-cdn.com
@@ -28,31 +26,25 @@ sharethis.com
 # perplexity
 imagedelivery.net
 pplx-res.cloudinary.com
-
-#новый домен с аватарками каналов YT
+# новый домен с аватарками каналов YT
 yt3.googleusercontent.com
-#gemini possible 
+# gemini possible 
 generativelanguage.googleapis.com
-
-#Google DeepMind
+# Google DeepMind
 deepmind.com
 deepmind.google
-
-Google Generative Language API
+# Google Generative Language API
 geller-pa.googleapis.com
 generativelanguage.googleapis.com
 proactivebackend-pa.googleapis.com
-Google AI Studio
-
+# Google AI Studio
 full:ai.google.dev
 full:alkalicore-pa.clients6.google.com
 full:alkalimakersuite-pa.clients6.google.com
 generativeai.google
 makersuite.google.com
-
 aistudio.google.com
 bard.google.com
 gemini.google
 gemini.google.com
-
-Необходимо для работы Google AI Studio. Взято отсюда - https://github.com/v2fly/domain-list-community/blob/master/data/google-deepmind
+# Необходимо для работы Google AI Studio. Взято отсюда - https://github.com/v2fly/domain-list-community/blob/master/data/google-deepmind
