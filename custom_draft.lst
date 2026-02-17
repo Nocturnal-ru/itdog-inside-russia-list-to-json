@@ -1,15 +1,17 @@
+# notion обращается к этому cidr за геолокацией, мое наблюдение
+208.103.161.0/24
+
 # google domen отвечает за многое
 gvt1.com
+
 #gemini
 gemini.google.com	      
 geller-pa.googleapis.com
 generativelanguage.googleapis.com
 proactivebackend-pa.googleapis.com
-#notion обращается к этому cidr за геолокацией, мое наблюдение
-208.103.161.0/24
-#скрины с 4pda не грузятся
+# скрины с 4pda не грузятся
 4pda.ws
-#ebi ac uk
+# ebi ac uk
 emblstatic.net
 embl-communications.github.io
 ebi.ac.uk
@@ -25,6 +27,7 @@ service.seamlessaccess.org
 sharethis.com
 # perplexity
 imagedelivery.net
+pplx-res.cloudinary.com
 
 #новый домен с аватарками каналов YT
 yt3.googleusercontent.com
