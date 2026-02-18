@@ -1,5 +1,7 @@
 # notion обращается к этому cidr за геолокацией, мое наблюдение
 208.103.161.0/24
+# Claude pics domen
+downloads.intercomcdn.com
 # fedora repo
 download.copr.fedorainfracloud.org
 mirrors.fedoraproject.org
