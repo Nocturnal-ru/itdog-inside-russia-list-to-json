@@ -1,5 +1,9 @@
 # notion обращается к этому cidr за геолокацией, мое наблюдение
 208.103.161.0/24
+# fedora repo
+download.copr.fedorainfracloud.org
+mirrors.fedoraproject.org
+codecs.fedoraproject.org
 # google domen отвечает за многое
 gvt1.com
 # gemini
