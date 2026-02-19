@@ -32,6 +32,7 @@ sharethis.com
 # perplexity
 imagedelivery.net
 pplx-res.cloudinary.com
+perplexity-ai.cloudflareaccess.com
 # новый домен с аватарками каналов YT
 yt3.googleusercontent.com
 # gemini possible 
