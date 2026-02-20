@@ -82,6 +82,10 @@
         "llhost.eu",
         "cheburcheck.ru",
         "downloads.intercomcdn.com"
+      ],
+      "ip_cidr": [
+        "208.103.161.0/24",
+        "23.251.49.123"
       ]
     }
   ]
