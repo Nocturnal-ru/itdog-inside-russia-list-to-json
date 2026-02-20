@@ -1,5 +1,7 @@
 # notion обращается к этому cidr за геолокацией, мое наблюдение
 208.103.161.0/24
+# стремный IP, вроде вызывает каскадный блок от РКН
+23.251.49.123
 # Claude pics domen
 downloads.intercomcdn.com
 # fedora repo
