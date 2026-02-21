@@ -97,7 +97,8 @@
         "tmdb-image-prod.b-cdn.net",
         "tmdb-web-image-prod.b-cdn.net",
         "tavily.com",
-        "proxy6.net"
+        "proxy6.net",
+        "2ip.ru"
       ],
       "ip_cidr": [
         "208.103.161.0/24",
