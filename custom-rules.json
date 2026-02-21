@@ -84,7 +84,20 @@
         "downloads.intercomcdn.com",
         "bitcoin.com",
         "bitrefill.com",
-        "bitcoin.org"
+        "bitcoin.org",
+        "racknerdtracker.com",
+        "t-ru.org",
+        "alterportal.net",
+        "opentrackr.org",
+        "awesome-android-root.org",
+        "flatterer.ru",
+        "nothing.community",
+        "themoviedb.org",
+        "tmdb.org",
+        "tmdb-image-prod.b-cdn.net",
+        "tmdb-web-image-prod.b-cdn.net",
+        "tavily.com",
+        "proxy6.net"
       ],
       "ip_cidr": [
         "208.103.161.0/24",
