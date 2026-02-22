@@ -17,7 +17,8 @@ uci -q delete dhcp.lan.dhcpv6
 uci -q delete dhcp.lan.ra
 
 # Удаляем IPv6 ULA Prefix
-uci -q delete network.globals.ula_prefix
+uci set network.globals.ula_prefix=''
+uci commit network
 
 # Применяем изменения одним коммитом
 uci commit network
