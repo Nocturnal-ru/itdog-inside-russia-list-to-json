@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>VLESS XHTTP + Reality/TLS Converter - Podkop edition</title>
+    <style>
+        body { background-color: #2b2b2b; color: #d4d4d4; font-family: system-ui, -apple-system, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { width: 90%; max-width: 900px; background-color: #2b2b2b; padding: 25px; box-sizing: border-box; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        h2 { font-size: 1.1em; font-weight: 500; margin: 0 0 15px; color: #fff; }
+        textarea { width: 100%; height: 100px; background-color: #1e1e1e; border: 1px solid #3c3c3c; color: #d4d4d4; font-family: monospace; padding: 10px; margin-bottom: 15px; box-sizing: border-box; resize: vertical; outline: none; }
+        textarea:focus { border-color: #007acc; }
+        button { width: 100%; padding: 12px; background-color: #007acc; color: white; border: none; font-weight: 500; cursor: pointer; margin-bottom: 20px; border-radius: 4px; transition: background 0.2s; }
+        button:hover { background-color: #005f9e; }
+        .output-container { position: relative; }
+        .copy-btn { position: absolute; top: 10px; right: 15px; color: #888; font-size: 12px; cursor: pointer; transition: color 0.2s; }
+        .copy-btn:hover { color: #fff; }
+        pre { width: 100%; height: 400px; background-color: #1e1e1e; color: #9cdcfe; font-family: monospace; padding: 15px; margin: 0; box-sizing: border-box; overflow: auto; white-space: pre-wrap; border: 1px solid #3c3c3c; border-radius: 4px; }
+        pre .key { color: #98c379; }
+        pre .string { color: #ce9178; }
+        pre .number { color: #b5cea8; }
+        pre .boolean { color: #569cd6; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>VLESS XHTTP + Reality/TLS Converter - Podkop edition</h2>
+        <textarea id="urlInput" placeholder="Вставьте вашу ссылку vless://..."></textarea>
+        <button onclick="convertURL()">Получить JSON</button>
+        
+        <div class="output-container">
+            <span class="copy-btn" onclick="copyJSON()">Копировать JSON</span>
+            <pre id="jsonOutput"></pre>
+        </div>
+    </div>
+
+    <script>
+        function convertURL() {
+            const urlInput = document.getElementById('urlInput').value.trim();
+            const outputElement = document.getElementById('jsonOutput');
+            
+            if (!urlInput.startsWith('vless://')) {
+                outputElement.innerHTML = '<span style="color: #ff6b6b;">Ошибка: Ссылка должна начинаться с vless://</span>';
+                return;
+            }
+
+            try {
+                const url = new URL(urlInput);
+                const params = new URLSearchParams(url.search);
+
+                const uuid = url.username;
+                const server = url.hostname;
+                const port = parseInt(url.port, 10) || 443;
+                let tag = url.hash ? decodeURIComponent(url.hash.substring(1)) : "VLESS-XHTTP";
+
+                const type = params.get('type') || 'xhttp';
+                const path = params.get('path') || '/';
+                const mode = params.get('mode') || 'auto';
+                const sni = params.get('sni') || '';
+                const host = params.get('host') || sni;
+                
+                const security = params.get('security');
+                const isReality = (security === 'reality');
+                const isTls = (security === 'tls');
+
+                const pbk = params.get('pbk') || '';
+                const sid = params.get('sid') || '';
+                const fp = params.get('fp') || 'chrome';
+
+                let alpnArray = [];
+                const alpnRaw = params.get('alpn');
+                if (alpnRaw) {
+                    alpnArray = decodeURIComponent(alpnRaw).split(',');
+                } else {
+                    if (type === 'xhttp') alpnArray = ["h2", "http/1.1"];
+                }
+
+                const tlsSettings = {
+                    "enabled": true,
+                    "server_name": sni,
+                    "alpn": alpnArray
+                };
+
+                if (isReality) {
+                    tlsSettings.reality = {
+                        "enabled": true,
+                        "public_key": pbk,
+                        "short_id": sid
+                    };
+                    tlsSettings.utls = {
+                        "enabled": true,
+                        "fingerprint": fp
+                    };
+                } else if (isTls) {
+                    if (params.has('allowInsecure')) {
+                        tlsSettings.insecure = (params.get('allowInsecure') === '1');
+                    }
+                    if (params.has('fp')) {
+                        tlsSettings.utls = {
+                            "enabled": true,
+                            "fingerprint": fp
+                        };
+                    }
+                }
+
+                const config = {
+                    "type": "vless",
+                    "tag": tag,
+                    "server": server,
+                    "server_port": port,
+                    "uuid": uuid,
+                    "flow": "",
+                    "tls": tlsSettings,
+                    "transport": {
+                        "type": type,
+                        "path": path,
+                        "host": host,
+                        "mode": mode
+                    }
+                };
+
+                outputElement.innerHTML = syntaxHighlight(config);
+
+            } catch (e) {
+                outputElement.innerHTML = '<span style="color: #ff6b6b;">Ошибка парсинга: ' + e.message + '</span>';
+            }
+        }
+
+        function copyJSON() {
+            const text = document.getElementById('jsonOutput').innerText;
+            navigator.clipboard.writeText(text).then(() => alert('JSON скопирован!')).catch(e => alert(e));
+        }
+
+        function syntaxHighlight(json) {
+            if (typeof json != 'string') json = JSON.stringify(json, undefined, 2);
+            json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+                let cls = 'number';
+                if (/^"/.test(match)) {
+                    if (/:$/.test(match)) cls = 'key';
+                    else cls = 'string';
+                } else if (/true|false/.test(match)) cls = 'boolean';
+                return '<span class="' + cls + '">' + match + '</span>';
+            });
+        }
+    </script>
+</body>
+</html>
