@@ -99,7 +99,8 @@
         "tavily.com",
         "proxy6.net",
         "2ip.ru",
-        "text-compare.com"
+        "text-compare.com",
+        "anthropic.qualtrics.com"
       ],
       "ip_cidr": [
         "208.103.161.0/24",
