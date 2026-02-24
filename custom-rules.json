@@ -101,7 +101,8 @@
         "2ip.ru",
         "text-compare.com",
         "anthropic.qualtrics.com",
-        "bits.media"
+        "bits.media",
+        "hysteria.network"
       ],
       "ip_cidr": [
         "208.103.161.0/24",
