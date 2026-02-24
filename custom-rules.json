@@ -100,7 +100,8 @@
         "proxy6.net",
         "2ip.ru",
         "text-compare.com",
-        "anthropic.qualtrics.com"
+        "anthropic.qualtrics.com",
+        "bits.media"
       ],
       "ip_cidr": [
         "208.103.161.0/24",
