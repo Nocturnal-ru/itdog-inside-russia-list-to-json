@@ -1,8 +1,6 @@
 # notion обращается к этому cidr за геолокацией, мое наблюдение
 208.103.161.0/24
-# стремный IP, вроде вызывает каскадный блок от РКН
-23.251.49.123
-# большой список стремных IP с ntc.party
+# большой список стремных IP с ntc.party (вроде вызывает каскадный блок от РКН)
 23.251.49.0/24
 23.251.52.0/24
 37.120.146.0/24
@@ -16,8 +14,7 @@
 67.220.66.0/24
 69.12.93.0/24
 69.50.94.0/24
-74.115.4.0/24
-74.115.5.0/24
+74.115.4.0/23
 79.127.142.0/24
 79.127.189.0/24
 82.198.246.0/24
@@ -68,7 +65,7 @@ deepmind.google
 geller-pa.googleapis.com
 generativelanguage.googleapis.com
 proactivebackend-pa.googleapis.com
-# Google AI Studio
+# Google AI Studio, Необходимо для работы Google AI Studio. Взято отсюда - https://github.com/v2fly/domain-list-community/blob/master/data/google-deepmind
 full:ai.google.dev
 full:alkalicore-pa.clients6.google.com
 full:alkalimakersuite-pa.clients6.google.com
@@ -78,4 +75,26 @@ aistudio.google.com
 bard.google.com
 gemini.google
 gemini.google.com
-# Необходимо для работы Google AI Studio. Взято отсюда - https://github.com/v2fly/domain-list-community/blob/master/data/google-deepmind
+# steam cloud, вручную выбраны
+45.121.184.0/24
+103.10.124.0/23
+103.28.54.0/24
+146.66.152.0/24
+146.66.155.0/24
+155.133.224.0/22
+155.133.228.0/23
+155.133.230.0/24
+155.133.236.0/23
+155.133.238.0/24
+155.133.240.0/23
+155.133.244.0/24
+155.133.246.0/24
+155.133.248.0/22
+155.133.252.0/24
+155.133.254.0/23
+162.254.192.0/21
+185.25.182.0/23
+192.69.96.0/22
+205.196.6.0/24
+208.64.200.0/22
+208.78.164.0/22
