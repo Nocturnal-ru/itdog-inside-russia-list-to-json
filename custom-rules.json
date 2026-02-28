@@ -102,7 +102,8 @@
         "text-compare.com",
         "anthropic.qualtrics.com",
         "bits.media",
-        "hysteria.network"
+        "hysteria.network",
+        "claude.com"
       ],
       "ip_cidr": [
         "208.103.161.0/24",
