@@ -103,7 +103,8 @@
         "anthropic.qualtrics.com",
         "bits.media",
         "hysteria.network",
-        "claude.com"
+        "claude.com",
+        "evps.net"
       ],
       "ip_cidr": [
         "208.103.161.0/24",
