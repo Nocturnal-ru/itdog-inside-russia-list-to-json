@@ -20,7 +20,8 @@
 82.198.246.0/24
 91.238.82.0/24
 107.151.194.0/24
-# Claude pics domain, bug report domain
+# Claude pics domain, bug report domain, more domain
+claude.com
 downloads.intercomcdn.com
 anthropic.qualtrics.com
 # fedora repo
