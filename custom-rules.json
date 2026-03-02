@@ -104,7 +104,9 @@
         "bits.media",
         "hysteria.network",
         "claude.com",
-        "evps.net"
+        "evps.net",
+        "mybib.com",
+        "journals.asm.org"
       ],
       "ip_cidr": [
         "208.103.161.0/24",
