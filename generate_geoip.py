@@ -119,15 +119,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-```
-
----
-
-**Структура репо после добавления:**
-```
-your-repo/
-├── .github/
-│   └── workflows/
-│       └── generate-geoip.yml
-├── generate_geoip.py
-└── geoip_noc.dat          ← генерируется автоматически
