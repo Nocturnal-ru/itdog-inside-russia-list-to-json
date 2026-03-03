@@ -1,0 +1,25 @@
+name: Generate geoip_noc.dat
+
+on:
+  schedule:
+    - cron: '0 3 * * *'   # каждый день в 03:00 UTC
+  workflow_dispatch:        # ручной запуск из интерфейса GitHub
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run generator script
+        run: python3 generate_geoip.py
+
+      - name: Commit and push result
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add geoip_noc.dat
+          git diff --cached --quiet || git commit -m "Update geoip_noc.dat [$(date -u +%Y-%m-%d)]"
+          git push
