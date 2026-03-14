@@ -21,6 +21,7 @@ SOURCES = [
     ("ROBLOX",       "https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Subnets/IPv4/roblox.lst"),
     ("TELEGRAM",     "https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Subnets/IPv4/telegram.lst"),
     ("TWITTER",      "https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Subnets/IPv4/twitter.lst"),
+    ("MYGEOIPBLOCK", "https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/refs/heads/main/cats/mygeoipblock.lst"),
 ]
 
 OUTPUT_FILE = "geoip_noc.dat"
