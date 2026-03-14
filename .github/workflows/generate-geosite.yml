@@ -24,7 +24,7 @@ jobs:
           python-version: '3.x'
 
       - name: Сборка geosite_noc.dat
-        run: python build.py
+        run: python generate_geosite.py
 
       - name: Коммит и пуш обновлённого файла
         run: |
@@ -36,12 +36,3 @@ jobs:
             && echo "Файл не изменился, коммит не нужен." \
             || git commit -m "chore: update geosite_noc.dat [$(date -u '+%Y-%m-%d %H:%M UTC')]"
           git push
-```
-
----
-
-## Использование
-
-После первого запуска `geosite_noc.dat` появится в корне репозитория. Прямая ссылка для скачивания:
-```
-https://raw.githubusercontent.com/<username>/<repo>/main/geosite_noc.dat
