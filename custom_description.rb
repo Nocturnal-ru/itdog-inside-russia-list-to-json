@@ -1,5 +1,7 @@
 # notion обращается к этому cidr за геолокацией, мое наблюдение
 208.103.161.0/24
+http-inputs-notion.splunkcloud.com
+notionusercontent.com
 # payments etc
 stripecdn.com
 stripe.com
