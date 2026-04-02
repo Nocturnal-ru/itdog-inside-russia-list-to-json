@@ -78,6 +78,7 @@ nftset=/arc.net/4#inet#fw4#vpn_domains
 nftset=/archive.ph/4#inet#fw4#vpn_domains
 nftset=/archiveofourown.org/4#inet#fw4#vpn_domains
 nftset=/arduino.cc/4#inet#fw4#vpn_domains
+nftset=/arxiv.org/4#inet#fw4#vpn_domains
 nftset=/as6723.net/4#inet#fw4#vpn_domains
 nftset=/assets.heroku.com/4#inet#fw4#vpn_domains
 nftset=/astroproxy.com/4#inet#fw4#vpn_domains
