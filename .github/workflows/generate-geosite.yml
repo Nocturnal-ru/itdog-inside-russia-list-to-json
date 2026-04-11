@@ -1,4 +1,4 @@
-name: Build geosite_noc.dat
+name: Generate geosite_noc.dat
 
 on:
   schedule:
