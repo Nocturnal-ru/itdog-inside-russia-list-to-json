@@ -2,7 +2,7 @@ name: Update delta.lst
 
 on:
   schedule:
-    - cron: "0 3 * * *"   # каждый день в 03:00 UTC — меняй под себя
+    - cron: "0 3 * * *"   # каждый день в 03:00 UTC
   workflow_dispatch:       # ручной запуск через интерфейс GitHub
 
 jobs:
