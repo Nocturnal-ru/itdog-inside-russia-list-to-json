@@ -1,0 +1,35 @@
+name: Convert all LST frm cats to JSON
+
+on:
+  schedule:
+    - cron: '0 3 * * *'   # Каждый день в 03:00 UTC
+  workflow_dispatch:        # Ручной запуск при необходимости
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write       # Нужно для git push
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run conversion
+        run: python scripts/convert_lst_to_singbox.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add json/
+          # Коммит только если есть реальные изменения
+          git diff --staged --quiet \
+            && echo "Изменений нет, пропускаем коммит." \
+            || git commit -m "chore: update singbox JSON [$(date -u '+%Y-%m-%d %H:%M UTC')]" \
+            && git push
