@@ -1,4 +1,4 @@
-name: Convert all LST frm cats to JSON
+name: Convert all LST from cats to JSON
 
 on:
   schedule:
