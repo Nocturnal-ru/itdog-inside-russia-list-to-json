@@ -17,7 +17,7 @@ mirrors.fedoraproject.org
 codecs.fedoraproject.org
 mirrors.rpmfusion.org
 download.copr.fedorainfracloud.org
-# google domen отвечает за многое
+# google domain отвечает за многое
 gvt1.com
 # gemini
 gemini.google.com	      
