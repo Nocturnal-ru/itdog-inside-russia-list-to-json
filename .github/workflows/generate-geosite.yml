@@ -24,7 +24,7 @@ jobs:
           python-version: '3.x'
 
       - name: Сборка geosite_noc.dat
-        run: python generate_geosite.py
+        run: python scripts/generate_geosite.py
 
       - name: Коммит и пуш обновлённого файла
         run: |
