@@ -21,7 +21,7 @@ jobs:
           python-version: '3.12'
 
       - name: Run conversion
-        run: python scripts/convert_lst_to_singbox.py
+        run: python scripts/lst2json.py
 
       - name: Commit and push if changed
         run: |
