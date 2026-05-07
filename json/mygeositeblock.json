@@ -1,0 +1,23 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "domain_suffix": [
+        "emblstatic.net",
+        "embl-communications.github.io",
+        "ebi.ac.uk",
+        "thegamer.com",
+        "stripecdn.com",
+        "stripe.com",
+        "cdn.embedly.com",
+        "dodopayments.com",
+        "bing.com",
+        "http-inputs-notion.splunkcloud.com",
+        "notionusercontent.com",
+        "habrastorage.org",
+        "bitrefill.com",
+        "iedb.org"
+      ]
+    }
+  ]
+}
