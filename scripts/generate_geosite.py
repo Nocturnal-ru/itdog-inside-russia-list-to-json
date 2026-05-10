@@ -19,11 +19,7 @@ from collections import defaultdict
 # ──────────────────────────────────────────────────────────────
 SOURCES = [
     {
-        "url": (
-            "https://raw.githubusercontent.com/Nocturnal-ru/"
-            "itdog-inside-russia-list-to-json/refs/heads/main/"
-            "cats/mygeositeblock.lst"
-        ),
+        "url": "https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/refs/heads/main/cats/mygeositeblock.lst",
         "tag": "mygeositeblock",
     },
     # Пример добавления второго списка:
