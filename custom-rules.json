@@ -110,7 +110,8 @@
         "mirrors.rpmfusion.org",
         "download.copr.fedorainfracloud.org",
         "openmediavault.org",
-        "hero-sms.com"
+        "hero-sms.com",
+        "proxy.market"
       ],
       "ip_cidr": [
         "208.103.161.0/24",
