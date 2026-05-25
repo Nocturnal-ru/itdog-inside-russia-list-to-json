@@ -111,7 +111,9 @@
         "download.copr.fedorainfracloud.org",
         "openmediavault.org",
         "hero-sms.com",
-        "proxy.market"
+        "proxy.market",
+        "accounts.firefox.com",
+        "services.mozilla.com"
       ],
       "ip_cidr": [
         "208.103.161.0/24",
