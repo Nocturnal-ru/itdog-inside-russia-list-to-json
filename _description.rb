@@ -11,6 +11,8 @@ dodopayments.com
 claude.com
 downloads.intercomcdn.com
 anthropic.qualtrics.com
+# prism openai
+crixet.com
 # fedora repo
 download.copr.fedorainfracloud.org
 mirrors.fedoraproject.org
