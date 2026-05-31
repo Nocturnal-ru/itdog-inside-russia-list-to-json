@@ -113,7 +113,8 @@
         "hero-sms.com",
         "proxy.market",
         "accounts.firefox.com",
-        "services.mozilla.com"
+        "services.mozilla.com",
+        "stripe.network"
       ],
       "ip_cidr": [
         "208.103.161.0/24",
