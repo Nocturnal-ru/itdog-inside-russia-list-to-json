@@ -9,8 +9,12 @@ SOURCES = [
     "https://raw.githubusercontent.com/itdoginfo/allow-domains/refs/heads/main/Categories/hodca.lst",
 ]
 
-CUSTOM_RULES_FILE = "custom-rules.json"
-OUTPUT_FILE = "delta.lst"
+# Корень репо — на один уровень выше папки scripts/
+ROOT = Path(__file__).resolve().parent.parent
+
+CUSTOM_RULES_FILE = ROOT / "custom-rules.json"
+OUTPUT_FILE       = ROOT / "delta.lst"
+DUPLICATES_FILE   = ROOT / "duplicates.lst"
 # -------------------------------------------------------
 
 
@@ -26,7 +30,7 @@ def fetch_domains(url: str) -> set[str]:
     return domains
 
 
-def load_custom_domains(filepath: str) -> list[str]:
+def load_custom_domains(filepath: Path) -> list[str]:
     """Извлекает domain_suffix из custom-rules.json, игнорирует ip_cidr."""
     with open(filepath, encoding="utf-8") as f:
         data = json.load(f)
@@ -55,9 +59,17 @@ def main():
     delta = [d for d in custom_domains if d.lower() not in merged]
 
     # 4. Записываем delta.lst
-    Path(OUTPUT_FILE).write_text("\n".join(delta) + "\n", encoding="utf-8")
+    OUTPUT_FILE.write_text("\n".join(delta) + "\n", encoding="utf-8")
     print(f"Delta (absent in sources): {len(delta)} domains")
     print(f"Written to {OUTPUT_FILE}")
+
+    # 5. Находим домены из custom-rules, которые есть в merged
+    duplicates = [d for d in custom_domains if d.lower() in merged]
+
+    # 6. Записываем duplicates.lst
+    DUPLICATES_FILE.write_text("\n".join(duplicates) + "\n", encoding="utf-8")
+    print(f"Duplicates (present in both): {len(duplicates)} domains")
+    print(f"Written to {DUPLICATES_FILE}")
 
 
 if __name__ == "__main__":
