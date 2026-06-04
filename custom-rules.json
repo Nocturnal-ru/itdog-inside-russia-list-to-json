@@ -110,7 +110,8 @@
         "accounts.firefox.com",
         "services.mozilla.com",
         "stripe.network",
-        "finex.blog"
+        "finex.blog",
+        "chat.deepseek.com"
       ],
       "ip_cidr": [
         "208.103.161.0/24",
