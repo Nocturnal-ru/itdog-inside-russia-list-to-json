@@ -114,7 +114,8 @@
         "proxy.market",
         "accounts.firefox.com",
         "services.mozilla.com",
-        "stripe.network"
+        "stripe.network",
+        "finex.blog"
       ],
       "ip_cidr": [
         "208.103.161.0/24",
