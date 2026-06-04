@@ -1,4 +1,4 @@
-name: Update delta.lst
+name: Generate delta.lst/duplicates.lst
 
 on:
   schedule:
