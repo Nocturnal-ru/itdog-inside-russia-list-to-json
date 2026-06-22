@@ -1,4 +1,4 @@
-# домены cbilling.eu, mag-aura.com - обложки медиатеки
+# домены cbilling.eu, mag-aura.com - обложки медиатеки; static.g-cdn.app - картинки на самом cbilling.eu
 mag-aura.com
 cb-media1.com
 static.g-cdn.app
