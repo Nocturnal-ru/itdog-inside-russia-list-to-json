@@ -1,4 +1,4 @@
-# домены cbilling.eu
+# домены cbilling.eu, mag-aura.com - обложки медиатеки
 mag-aura.com
 
 # notion обращается к этому cidr за геолокацией, мое наблюдение
