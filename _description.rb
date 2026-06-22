@@ -1,7 +1,7 @@
 # домены cbilling.eu, mag-aura.com - обложки медиатеки
 mag-aura.com
 cb-media1.com
-
+static.g-cdn.app
 # notion обращается к этому cidr за геолокацией, мое наблюдение
 208.103.161.0/24
 http-inputs-notion.splunkcloud.com
