@@ -112,7 +112,8 @@
         "finex.blog",
         "app.hmbee.ru",
         "avatars.githubusercontent.com",
-        "collector.github.com"
+        "collector.github.com",
+        "openrouter.ai"
       ],
       "ip_cidr": [
         "208.103.161.0/24",
