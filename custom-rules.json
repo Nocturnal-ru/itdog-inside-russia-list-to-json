@@ -106,7 +106,8 @@
         "stripe.network",
         "finex.blog",
         "app.hmbee.ru",
-        "openrouter.ai"
+        "openrouter.ai",
+        "datawrapper.dwcdn.net"
       ],
       "ip_cidr": [
         "208.103.161.0/24",
