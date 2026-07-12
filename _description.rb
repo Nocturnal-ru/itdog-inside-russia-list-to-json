@@ -17,6 +17,8 @@ downloads.intercomcdn.com
 anthropic.qualtrics.com
 # prism openai
 crixet.com
+# сервис создания интерактивных карт/инфографики, контент для сайтов
+datawrapper.dwcdn.net
 # fedora repo
 download.copr.fedorainfracloud.org
 mirrors.fedoraproject.org
