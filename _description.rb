@@ -2,6 +2,11 @@
 nperf.com
 nperf.net
 tally.so
+# mozilla sync
+cdn.mozilla.net
+detectportal.firefox.com
+accounts.firefox.com
+services.mozilla.com
 # домены cbilling.eu, mag-aura.com - обложки медиатеки; static.g-cdn.app - картинки на самом cbilling.eu
 mag-aura.com
 cb-media1.com
