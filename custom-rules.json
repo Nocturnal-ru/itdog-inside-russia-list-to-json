@@ -112,7 +112,9 @@
         "openrouter.ai",
         "datawrapper.dwcdn.net",
         "githubusercontent.com",
-        "cazy.org"
+        "cazy.org",
+        "mavgpt.ai",
+        "vals.ai"
       ],
       "ip_cidr": [
         "208.103.161.0/24",
