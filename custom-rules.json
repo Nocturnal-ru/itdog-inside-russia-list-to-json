@@ -11,7 +11,6 @@
         "ebi.ac.uk",
         "embl-communications.github.io",
         "emblstatic.net",
-        "evolutionaryscale.ai",
         "gvt1.com",
         "habrastorage.org",
         "http-inputs-notion.splunkcloud.com",
@@ -115,7 +114,9 @@
         "cazy.org",
         "mavgpt.ai",
         "vals.ai",
-        "upload.wikimedia.org"
+        "upload.wikimedia.org",
+        "evolutionaryscale.ai",
+        "biohub.ai"
       ],
       "ip_cidr": [
         "208.103.161.0/24",
