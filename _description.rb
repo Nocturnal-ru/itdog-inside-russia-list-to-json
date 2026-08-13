@@ -26,6 +26,16 @@ downloads.intercomcdn.com
 anthropic.qualtrics.com
 # prism openai
 crixet.com
+# YT old, вероятно не нужны
+videogoogle.com     
+nhacmp3youtube.com
+withyoutube.com
+youtube.googleapis.com
+youtubeeducation.com
+youtubefanfest.com
+youtubegaming.com
+youtubego.com
+youtubemobilesupport.com
 # сервис создания интерактивных карт/инфографики, контент для сайтов
 datawrapper.dwcdn.net
 # fedora repo
