@@ -11,8 +11,18 @@
         "stripe.network",
         "cdn.embedly.com",
         "dodopayments.com",
+        "stripe.network",
         "http-inputs-notion.splunkcloud.com",
         "notionusercontent.com",
+        "redditstatic.com",
+        "redd.it",
+        "redditspace.com",
+        "redditmedia.com",
+        "reddit.com",
+        "evolutionaryscale.ai",
+        "biohub.ai",
+        "downloads.intercomcdn.com",
+        "anthropic.qualtrics.com",
         "thegamer.com",
         "habrastorage.org",
         "bing.com",
@@ -24,13 +34,9 @@
         "cazy.org",
         "schneegans.de",
         "tile.openstreetmap.org",
-        "redditstatic.com",
-        "redd.it",
-        "redditspace.com",
-        "redditmedia.com",
-        "reddit.com",
-        "evolutionaryscale.ai",
-        "biohub.ai"
+        "tmdb-web-image-prod.b-cdn.net",
+        "videos.openai.com",
+        "openrouter.ai"
       ]
     }
   ]
