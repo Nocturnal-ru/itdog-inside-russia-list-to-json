@@ -23,6 +23,8 @@
         "biohub.ai",
         "downloads.intercomcdn.com",
         "anthropic.qualtrics.com",
+        "tile.osm.org",
+        "tile.openstreetmap.org",
         "thegamer.com",
         "habrastorage.org",
         "bing.com",
@@ -33,7 +35,6 @@
         "openrouter.ai",
         "cazy.org",
         "schneegans.de",
-        "tile.openstreetmap.org",
         "tmdb-web-image-prod.b-cdn.net",
         "videos.openai.com",
         "openrouter.ai"
