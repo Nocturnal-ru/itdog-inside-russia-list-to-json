@@ -22,6 +22,10 @@ SOURCES = [
         "url": "https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/refs/heads/main/cats/mygeositeblock.lst",
         "tag": "mygeositeblock",
     },
+    {
+         "url": "https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/refs/heads/main/cats/steam.lst",
+         "tag": "steam",
+    },
     # Пример добавления второго списка:
     # {
     #     "url": "https://example.com/another-list.lst",
