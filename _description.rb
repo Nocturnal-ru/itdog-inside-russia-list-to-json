@@ -1,3 +1,7 @@
+# google photos videos
+photos.googledrive.com
+video.google.com
+1e100.net
 # на nperf.com форма использует tally.so
 nperf.com
 nperf.net
