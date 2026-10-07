@@ -1,3 +1,10 @@
+# tmdb domain list
+themoviedb.org
+tmdb.org
+tmdb-image-prod.b-cdn.net
+tmdb-web-image-prod.b-cdn.net
+thetvdb.com
+fanart.tv
 # google photos videos
 photos.googledrive.com
 video.google.com
