@@ -54,10 +54,20 @@ for cmd in ubus jsonfilter wget tar awk grep mktemp; do
 done
 case "$BACKUP_ROOT" in /*) ;; *) fail 'Backup path must be absolute' ;; esac
 
+log 'AmneziaWG updater: detecting OpenWrt platform...'
 BOARD=$(ubus call system board) || fail 'Cannot query OpenWrt board'
-FW_VERSION=$(printf '%s\n' "$BOARD" | jsonfilter -e '@.release.version')
-PKG_ARCH=$(printf '%s\n' "$BOARD" | jsonfilter -e '@.release.arch')
-TARGET_FULL=$(printf '%s\n' "$BOARD" | jsonfilter -e '@.release.target')
+# Not every OpenWrt version exposes release.arch through ubus. With set -e
+# a failed jsonfilter previously caused a silent early exit.
+FW_VERSION=$(printf '%s\n' "$BOARD" | jsonfilter -e '@.release.version' 2>/dev/null) \
+    || fail 'Cannot determine OpenWrt version'
+TARGET_FULL=$(printf '%s\n' "$BOARD" | jsonfilter -e '@.release.target' 2>/dev/null) \
+    || fail 'Cannot determine OpenWrt target'
+PKG_ARCH=$(printf '%s\n' "$BOARD" | jsonfilter -e '@.release.arch' 2>/dev/null) || PKG_ARCH=''
+if [ -z "$PKG_ARCH" ]; then
+    log 'ubus release.arch is unavailable; using opkg print-architecture.'
+    PKG_ARCH=$(opkg print-architecture | awk '$1 == "arch" && $2 != "all" && $2 != "noarch" && $3 + 0 > max { max = $3 + 0; arch = $2 } END { print arch }') \
+        || fail 'Cannot read opkg architectures'
+fi
 case "$FW_VERSION" in ''|*[!0-9.]*) fail 'Invalid OpenWrt version' ;; esac
 case "$PKG_ARCH" in ''|*[!a-zA-Z0-9_-]*) fail 'Invalid package architecture' ;; esac
 case "$TARGET_FULL" in
