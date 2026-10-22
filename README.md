@@ -85,6 +85,7 @@ duplicates.lst       найденные пересечения
 geoip_noc.dat        генерируемый GeoIP-файл
 geosite_noc.dat      генерируемый GeoSite-файл
 owrt_tune.sh         вспомогательный скрипт настройки OpenWrt
+awg-openwrt-updater.sh  обновление установленных пакетов AmneziaWG (opkg)
 ```
 
 > [!IMPORTANT]
@@ -110,6 +111,24 @@ wget -O /tmp/owrt_tune.sh https://raw.githubusercontent.com/Nocturnal-ru/itdog-i
 sh /tmp/owrt_tune.sh
 rm /tmp/owrt_tune.sh
 ```
+
+## OpenWrt: обновление AmneziaWG
+
+[`awg-openwrt-updater.sh`](awg-openwrt-updater.sh) обновляет уже установленные пакеты [awg-openwrt](https://github.com/Slava-Shchipunov/awg-openwrt): сравнивает версии с GitHub Releases, проверяет зависимости перед установкой и по умолчанию сохраняет резервную копию сетевых настроек в `/root/awg-backups/`. Конфигурацию интерфейсов скрипт не меняет.
+
+Обновление (с подтверждением и резервным копированием):
+
+```sh
+sh <(wget -O - https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/main/awg-openwrt-updater.sh)
+```
+
+Проверка без установки:
+
+```sh
+sh <(wget -O - https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/main/awg-openwrt-updater.sh) --check
+```
+
+Поддерживаются OpenWrt с `opkg` (`.ipk`, в частности 24.10.x); OpenWrt 25.x с `apk` пока не поддерживается. При обновлении модуля ядра рекомендуется контролируемая перезагрузка и проверка туннеля. Формат `<(…)` требует поддержки process substitution командной оболочкой, из которой запускается команда.
 
 ## Источники
 
