@@ -62,6 +62,13 @@ gemini.google.com
 geller-pa.googleapis.com
 generativelanguage.googleapis.com
 proactivebackend-pa.googleapis.com
+# google notebooklm
+geminiweb-pa.clients6.google.com
+notebook.google
+notebooklm.google
+notebooklm.google.com
+labs.google
+notebook.google.com
 # скрины с 4pda не грузятся
 4pda.ws
 # ebi ac uk
