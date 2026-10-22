@@ -139,7 +139,7 @@ for pkg in $PKGS; do
         || fail "Cannot download $url"
     old=$(installed_version "$pkg")
     new=$(read_control "$pkg" "$file")
-    if opkg compare-versions "$old" '<' "$new"; then
+    if opkg compare-versions "$old" '<<' "$new"; then
         log "  UPDATE: $old -> $new"
         printf '%s|%s|%s\n' "$pkg" "$old" "$new" >> "$WORK_DIR/plan"
     elif opkg compare-versions "$old" '=' "$new"; then
