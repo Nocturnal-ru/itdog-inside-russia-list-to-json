@@ -86,6 +86,7 @@ geoip_noc.dat        генерируемый GeoIP-файл
 geosite_noc.dat      генерируемый GeoSite-файл
 owrt_tune.sh         вспомогательный скрипт настройки OpenWrt
 awg-openwrt-updater.sh  обновление установленных пакетов AmneziaWG (opkg)
+vps_warp_distillium.sh  нативный WireGuard WARP-интерфейс на VPS (systemd)
 ```
 
 > [!IMPORTANT]
@@ -129,6 +130,75 @@ sh <(wget -O - https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russi
 ```
 
 Поддерживаются OpenWrt с `opkg` (`.ipk`, в частности 24.10.x); OpenWrt 25.x с `apk` пока не поддерживается. При обновлении модуля ядра рекомендуется контролируемая перезагрузка и проверка туннеля. Формат `<(…)` требует поддержки process substitution командной оболочкой, из которой запускается команда.
+
+## VPS: WARP через WireGuard (distillium)
+
+[`vps_warp_distillium.sh`](vps_warp_distillium.sh) — упрощённый установщик нативного WARP-интерфейса для **Debian/Ubuntu с systemd** по мотивам [distillium/warp-native](https://github.com/distillium/warp-native). Используется штатный `wg-quick@distillium.service` и конфигурация `/etc/wireguard/distillium.conf`.
+
+**Отличия от оригинала:** нет регистрации аккаунта, `wgcf`, kill switch, watchdog, изменения DNS сервера VPS или маршрута по умолчанию. Ключи и рабочий endpoint заранее получаются через [warpscout](https://github.com/vernette/warpscout). Скрипт ставит только недостающие `wireguard-tools` / `iproute2` через apt; сохраняет параметры warpscout, удаляет `DNS` и принудительно выставляет `Table = off`. Конфиги с командами `PostUp` / `PreUp` и с AmneziaWG-полями отклоняются.
+
+### Установка
+
+1. На компьютере с **warpscout** создай конфиг стандартного **WireGuard** (не AmneziaWG):
+
+   ```bash
+   warpscout scan -p wg -P -exclude-node DME -conf distillium.conf -table-off -no-dns
+   ```
+
+   `-p wg` принципиален: штатный `wg-quick` не поддерживает параметры `Jc/Jmin/Jmax/S1/S2/H1-H4`, которые присутствуют у `-p awg`. Если обычный WG блокируется на выбранной сети, этот установщик сам по себе блокировку не устранит. Если IPv6 на VPS полностью отключён, убери IPv6-адрес из `Address` и IPv6-префикс из `AllowedIPs` в исходном конфиге.
+
+2. Скопируй конфиг на VPS, затем скачай и запусти скрипт **от root**:
+
+   ```bash
+   scp distillium.conf root@<VPS_IP>:/root/distillium.conf
+   ```
+
+   На VPS:
+
+   ```bash
+   curl -fsSLo /root/vps_warp_distillium.sh https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/main/vps_warp_distillium.sh
+   bash /root/vps_warp_distillium.sh --config /root/distillium.conf
+   ```
+
+   Если конфиг уже сохранён в `/etc/wireguard/distillium.conf`, можно запустить скрипт без `--config`. При замене существующего конфига другим файлом явно добавь `--replace`: будет создана резервная копия `distillium.conf.bak.*`, а при ошибке запуска прежний конфиг будет восстановлен. Исходный файл в `/root` после успешной установки лучше удалить или хранить с правами `0600`.
+
+### Проверка и управление
+
+```bash
+systemctl status wg-quick@distillium
+wg show distillium
+ip -4 route show default
+curl -4 --interface distillium --max-time 15 -fsS https://www.cloudflare.com/cdn-cgi/trace
+```
+
+Туннель должен быть активен, а `default route` VPS — остаться прежним. Для появления `latest handshake` нужен реальный трафик через туннель. Последняя команда проверяет выход через интерфейс, а не через обычный IP VPS. При ошибке смотри `journalctl -u wg-quick@distillium -n 100 --no-pager`.
+
+Остановить / запустить / выключить автозапуск:
+
+```bash
+systemctl stop wg-quick@distillium
+systemctl start wg-quick@distillium
+systemctl disable wg-quick@distillium
+```
+
+Для **Xray-core, сервер** (3x-ui, outbound `freedom`) можно использовать привязку `sockopt.interface` к `distillium` и направлять на этот outbound только нужные домены:
+
+```json
+{
+  "tag": "distillium",
+  "protocol": "freedom",
+  "settings": {
+    "domainStrategy": "ForceIPv4"
+  },
+  "streamSettings": {
+    "sockopt": {
+      "interface": "distillium"
+    }
+  }
+}
+```
+
+Это JSON outbound ядра Xray, **не** конфиг 3x-ui. Поскольку kill switch отсутствует, строгую гарантию отсутствия выхода вне туннеля такая схема не даёт; отдельно проверь поведение при остановке интерфейса. Скрипт не меняет сетевую конфигурацию Xray или firewall.
 
 ## Источники
 
