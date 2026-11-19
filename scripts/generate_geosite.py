@@ -26,6 +26,10 @@ SOURCES = [
          "url": "https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/refs/heads/main/cats/steam.lst",
          "tag": "steam",
     },
+    {
+         "url": "https://raw.githubusercontent.com/Nocturnal-ru/itdog-inside-russia-list-to-json/refs/heads/main/cats/youtube_narrow.lst",
+         "tag": "youtube_narrow",
+    },
     # Пример добавления второго списка:
     # {
     #     "url": "https://example.com/another-list.lst",
