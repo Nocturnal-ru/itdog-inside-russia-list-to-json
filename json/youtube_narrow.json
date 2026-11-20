@@ -1,0 +1,17 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "domain_suffix": [
+        "youtube.com",
+        "googlevideo.com",
+        "ytimg.com",
+        "youtubei.googleapis.com",
+        "youtu.be",
+        "youtube-nocookie.com",
+        "youtubeembeddedplayer.googleapis.com",
+        "yt3.googleusercontent.com"
+      ]
+    }
+  ]
+}
