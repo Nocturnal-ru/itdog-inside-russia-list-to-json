@@ -3,6 +3,7 @@
   "rules": [
     {
       "domain_suffix": [
+        "venice.ai",
         "emblstatic.net",
         "embl-communications.github.io",
         "ebi.ac.uk",
