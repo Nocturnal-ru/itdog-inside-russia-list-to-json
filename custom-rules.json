@@ -110,7 +110,8 @@
         "nothingarchive.tech",
         "static.cloudflareinsights.com",
         "mirrorhub.lol",
-        "proe.info"
+        "proe.info",
+        "eu-west-1.token.awswaf.com"
       ]
     }
   ]
