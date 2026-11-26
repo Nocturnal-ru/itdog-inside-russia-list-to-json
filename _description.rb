@@ -1,3 +1,6 @@
+# my HODCA
+# deepseek API domain
+eu-west-1.token.awswaf.com
 # github domains
 githubusercontent.com
 github.githubassets.com
