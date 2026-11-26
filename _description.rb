@@ -2,6 +2,8 @@
 githubusercontent.com
 github.githubassets.com
 avatars.githubusercontent.com
+githubusercontent.com
+github.com
 # tmdb domain list
 themoviedb.org
 tmdb.org
