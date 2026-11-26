@@ -111,7 +111,8 @@
         "static.cloudflareinsights.com",
         "mirrorhub.lol",
         "proe.info",
-        "eu-west-1.token.awswaf.com"
+        "eu-west-1.token.awswaf.com",
+        "bioinformatics.org"
       ]
     }
   ]
